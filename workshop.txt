@@ -1,0 +1,6 @@
+version=1
+id=3319379578
+title=Admin's Safehouse List Search Filter
+description=Mod to find with a searchbox a  specific owner safehouse in the admin safehouse list 
+tags=Build 41;Interface;Multiplayer
+visibility=public
