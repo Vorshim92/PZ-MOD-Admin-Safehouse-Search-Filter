@@ -2,7 +2,7 @@ local ISSafehousesList_initialise = ISSafehousesList.initialise
 
 function ISSafehousesList:initialise()
     ISSafehousesList_initialise(self)
-    self.searchField = ISTextEntryBox:new("", self.width/2 - (getTextManager():MeasureStringX(UIFont.Medium, getText("IGUI_AdminPanel_SeeSafehouses")) / 2), 40, 100, 10);
+    self.searchField = ISTextEntryBox:new("", self.width/2 - 100/2, 40, 100, 10);
         self.searchField:initialise()
         self.searchField.tooltip = getText("ContextMenu_searchTip")
         self.searchField.onTextChange = function()
