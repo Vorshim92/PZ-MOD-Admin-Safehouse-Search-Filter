@@ -23,6 +23,9 @@ function ISSafehousesList:initialise()
     self.searchField.backgroundColor = { r = 0, g = 0, b = 0, a = 1 }
     self:addChild(self.searchField)
 
+    -- Cache della texture icona di ricerca (best practice B42)
+    self.searchIcon = getTexture("media/ui/searchicon.png")
+
     -- Sposta la lista più in basso per fare spazio al searchField
     local extraSpace = BUTTON_HGT + UI_BORDER_SPACING
     self.datas:setY(self.datas:getY() + extraSpace)
@@ -34,11 +37,11 @@ function ISSafehousesList:render()
         ISSafehousesList_render(self)
     end
 
-    if self.searchField and self.searchField:isVisible() then
-        -- Disegna icona a sinistra del campo di ricerca
+    if self.searchField and self.searchField:isVisible() and self.searchIcon then
+        -- Disegna icona a sinistra del campo di ricerca (texture cachata)
         local iconX = self.searchField:getX() - 20
         local iconY = self.searchField:getY() + 2
-        self:drawTexture(getTexture("media/ui/searchicon.png"), iconX, iconY, 1, 1, 1, 1)
+        self:drawTexture(self.searchIcon, iconX, iconY, 1, 1, 1, 1)
     end
 end
 
